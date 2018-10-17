@@ -1,0 +1,19 @@
+identidock:
+  build: .
+  environment:
+    ENV: PRD
+  volumes:
+    - ./app:/app
+  ports:
+    - "9090:9090"
+    - "9191:9191"
+  links:
+    - dnmonster
+    - redis
+
+dnmonster:
+  image: amouat/dnmonster:1.0
+
+
+redis:
+  image: redis:3.0

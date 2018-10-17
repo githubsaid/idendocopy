@@ -1,0 +1,8 @@
+identidock:
+  build: .
+  environment:
+    ENV: PROD
+  volumes:
+    - ./app:/app
+  ports:
+    - "5000:5000"
